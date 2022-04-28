@@ -54,9 +54,7 @@ def update_all_tags():
 			tags['ID'] = []
 			tags['Count'] = []
 
-list_of_blogs = st.radio("Select the corresponding blog", blogs)
-
-keyword = st.text_input('Enter additional keyword for search')
+keyword = st.text_input('Enter an additional keyword to all the search URLs')
 
 update_tags = st.button('↻ Refresh tags')
 
