@@ -54,7 +54,9 @@ def update_all_tags():
 			tags['ID'] = []
 			tags['Count'] = []
 
-keyword = st.text_input('Enter an additional keyword to all the search URLs')
+list_of_blogs = st.radio("Select the corresponding blog", blogs)
+
+keyword = st.text_input('Enter additional keyword for search')
 
 update_tags = st.button('↻ Refresh tags')
 
@@ -118,9 +120,9 @@ def sampleface():
 		sample = random.choices(sf_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))			
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")		
 	
 def cultrface():
 
@@ -138,9 +140,9 @@ def cultrface():
 		sample = random.choices(cultr_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))			
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")		
 
 def logicface():
 
@@ -157,9 +159,9 @@ def logicface():
 		sample = random.choices(logic_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))			
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
 
 def playrface():
 
@@ -176,9 +178,9 @@ def playrface():
 		sample = random.choices(playr_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))			
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")			
 
 def distantarcade():
 
@@ -195,9 +197,9 @@ def distantarcade():
 		sample = random.choices(da_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', ''))			
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
 
 def all_blogs():
 
