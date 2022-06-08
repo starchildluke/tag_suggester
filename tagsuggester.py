@@ -120,9 +120,9 @@ def sampleface():
 		sample = random.choices(sf_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")		
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
 	
 def cultrface():
 
@@ -140,9 +140,9 @@ def cultrface():
 		sample = random.choices(cultr_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")		
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
 
 def logicface():
 
@@ -159,9 +159,9 @@ def logicface():
 		sample = random.choices(logic_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 
 def playrface():
 
@@ -178,9 +178,9 @@ def playrface():
 		sample = random.choices(playr_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")			
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
 
 def distantarcade():
 
@@ -197,9 +197,9 @@ def distantarcade():
 		sample = random.choices(da_words(), x, k=2)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '')).replace('\u00e9', 'e').replace('#039;', "'")
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 
 def all_blogs():
 
