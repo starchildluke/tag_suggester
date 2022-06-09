@@ -29,36 +29,7 @@ upper_limits = {
 	'ld89.org': 1
 }
 
-# Reload all tags function
-def update_all_tags():
-
-	with st.spinner('Reloading tags...'):
-
-		for blog in blogs:
-		
-			# Get tag data
-			for pg in range(1, upper_limits[blog]+1):
-
-				tag_url = f'https://{blog}/wp-json/wp/v2/tags?per_page=100&page={pg}'
-				r_tag = requests.get(tag_url)
-				api_tags = r_tag.json()
-
-				for n in range(0,len(api_tags)):
-					tags['Tag'].append(api_tags[n]['name'])
-					tags['ID'].append(api_tags[n]['id'])
-					tags['Count'].append(api_tags[n]['count'])
-
-				with open(f"{blog}.json", "w") as outfile:
-					json.dump(tags, outfile)
-			tags['Tag'] = []
-			tags['ID'] = []
-			tags['Count'] = []
-
-list_of_blogs = st.radio("Select the corresponding blog", blogs)
-
 keyword = st.text_input('Enter additional keyword for search')
-
-update_tags = st.button('↻ Refresh tags')
 
 load_tag_ideas = st.button('Load tag ideas')
 
