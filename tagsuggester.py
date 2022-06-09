@@ -33,9 +33,6 @@ keyword = st.text_input('Enter additional keyword for search')
 
 load_tag_ideas = st.button('Load tag ideas')
 
-if update_tags:
-	update_all_tags()
-
 # Tag ideas functions
 
 def sf_words():
