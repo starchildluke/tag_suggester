@@ -120,7 +120,9 @@ def logicface():
 
 		lf_cats = ["blerds", "engineering", "mathematics", "mobile", "projects", "science", "biology", "chemistry", "earth sciences", "physics", "tech", "black tech", "computing", "internet", "web", "video games", "computer science", "ai", ""]
 
-		lf_cats_sample = random.choices(lf_cats, k=1)
+		lf_weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+
+		lf_cats_sample = random.choices(lf_cats, lf_weights, k=1)
 
 		with open("logicface.co.uk.json") as lf_json_file:
 			lf = json.load(lf_json_file)
@@ -145,7 +147,9 @@ def playrface():
 
 		pf_cats = ["american football", "athletics", "baseball", "basketball", "cycling", "golf", "motor sports", "olympics", "summer olympics", "snooker", "soccer", "sport", "tennis", "water sports", "winter sports", "ice hockey", "skiing", "wrestling", "winter olympics", ""]
 
-		pf_cats_sample = random.choices(pf_cats, k=1)
+		pf_weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+
+		pf_cats_sample = random.choices(pf_cats, pf_weights, k=1)
 
 		with open("playrface.co.uk.json") as pf_json_file:
 			pf = json.load(pf_json_file)
@@ -169,7 +173,9 @@ def distantarcade():
 
 		da_cats = ["gaming", "nintendo", "pc", "playstation", "pokemon", "sega", "xbox", ""]
 
-		da_cats_sample = random.choices(da_cats, k=1)
+		da_weights = [1, 1, 1, 1, 1, 1, 1, 3]
+
+		da_cats_sample = random.choices(da_cats, da_weights, k=1)
 
 		with open("distantarcade.co.uk.json") as da_json_file:
 			da = json.load(da_json_file)
