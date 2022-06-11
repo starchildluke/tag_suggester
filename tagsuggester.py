@@ -118,7 +118,7 @@ def logicface():
 
 	for sample in range(5):
 
-		lf_cats = ["blerds", "engineering", "mathematics", "mobile", "projects", "science", "biology", "chemistry", "earth sciences", "physics", "tech", "black tech", "computing", "internet", "web", "video games", "computer science", "ai"]
+		lf_cats = ["blerds", "engineering", "mathematics", "mobile", "projects", "science", "biology", "chemistry", "earth sciences", "physics", "tech", "black tech", "computing", "internet", "web", "video games", "computer science", "ai", ""]
 
 		lf_cats_sample = random.choices(lf_cats, k=1)
 
@@ -143,7 +143,7 @@ def playrface():
 
 	for sample in range(5):
 
-		pf_cats = ["american football", "athletics", "baseball", "basketball", "cycling", "golf", "motor sports", "olympics", "summer olympics", "snooker", "soccer", "sport", "tennis", "water sports", "winter sports", "ice hockey", "skiing", "wrestling", "winter olympics"]
+		pf_cats = ["american football", "athletics", "baseball", "basketball", "cycling", "golf", "motor sports", "olympics", "summer olympics", "snooker", "soccer", "sport", "tennis", "water sports", "winter sports", "ice hockey", "skiing", "wrestling", "winter olympics", ""]
 
 		pf_cats_sample = random.choices(pf_cats, k=1)
 
@@ -167,7 +167,7 @@ def distantarcade():
 
 	for sample in range(5):
 
-		da_cats = ["gaming", "nintendo", "pc", "playstation", "pokemon", "sega", "xbox"]
+		da_cats = ["gaming", "nintendo", "pc", "playstation", "pokemon", "sega", "xbox", ""]
 
 		da_cats_sample = random.choices(da_cats, k=1)
 
