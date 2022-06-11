@@ -135,7 +135,7 @@ def logicface():
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(lf_cats_sample).lower() + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
+			st.write('https://google.com/search?q=' + '+'.join(lf_cats_sample).lower().replace(' ', '+') + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 
 def playrface():
 
