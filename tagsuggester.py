@@ -114,13 +114,14 @@ def cultrface():
 
 def logicface():
 
-	lf_cats = ["blerds", "engineering", "mathematics", "mobile", "projects", "science", "biology", "chemistry", "earth sciences", "physics", "tech", "black tech", "computing", "internet", "web", "video games", "computer science", "ai"]
-
-	lf_cats_sample = random.choices(lf_cats, k=1)
-
 	st.header('LOGiCFACE ideas')
 
 	for sample in range(5):
+
+		lf_cats = ["blerds", "engineering", "mathematics", "mobile", "projects", "science", "biology", "chemistry", "earth sciences", "physics", "tech", "black tech", "computing", "internet", "web", "video games", "computer science", "ai"]
+
+		lf_cats_sample = random.choices(lf_cats, k=1)
+
 		with open("logicface.co.uk.json") as lf_json_file:
 			lf = json.load(lf_json_file)
 		lf_words_count_lists = lf['Count']
@@ -134,17 +135,18 @@ def logicface():
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + '+'.join(lf_cats_sample).lower())
+			st.write('https://google.com/search?q=' + '+'.join(lf_cats_sample).lower() + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 
 def playrface():
-
-	pf_cats = ["american football", "athletics", "baseball", "basketball", "cycling", "golf", "motor sports", "olympics", "summer olympics", "snooker", "soccer", "sport", "tennis", "water sports", "winter sports", "ice hockey", "skiing", "wrestling", "winter olympics"]
-
-	pf_cats_sample = random.choices(pf_cats, k=1)
 
 	st.header('Playrface ideas')
 
 	for sample in range(5):
+
+		pf_cats = ["american football", "athletics", "baseball", "basketball", "cycling", "golf", "motor sports", "olympics", "summer olympics", "snooker", "soccer", "sport", "tennis", "water sports", "winter sports", "ice hockey", "skiing", "wrestling", "winter olympics"]
+
+		pf_cats_sample = random.choices(pf_cats, k=1)
+
 		with open("playrface.co.uk.json") as pf_json_file:
 			pf = json.load(pf_json_file)
 		pf_words_count_lists = pf['Count']
@@ -157,17 +159,18 @@ def playrface():
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(pf_cats_sample).lower() + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
+			st.write('https://google.com/search?q=' + '+'.join(pf_cats_sample).lower().replace(' ', '+') + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
 
 def distantarcade():
-
-	da_cats = ["gaming", "nintendo", "pc", "playstation", "pokemon", "sega", "xbox"]
-
-	da_cats_sample = random.choices(da_cats, k=1)
 
 	st.header('Distant Arcade ideas')
 
 	for sample in range(5):
+
+		da_cats = ["gaming", "nintendo", "pc", "playstation", "pokemon", "sega", "xbox"]
+
+		da_cats_sample = random.choices(da_cats, k=1)
+
 		with open("distantarcade.co.uk.json") as da_json_file:
 			da = json.load(da_json_file)
 		da_words_count_lists = da['Count']
@@ -180,7 +183,7 @@ def distantarcade():
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + '+'.join(da_cats_sample).lower())
+			st.write('https://google.com/search?q=' + '+'.join(da_cats_sample).lower().replace(' ', '+') + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 
 def all_blogs():
 
