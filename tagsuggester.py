@@ -26,6 +26,8 @@ upper_limits = {
 
 keyword = st.text_input('Enter additional keyword for search')
 
+num_of_tags = st.number_input('Enter number of tags to load', 1, 2)
+
 load_tag_ideas = st.button('Load tag ideas')
 
 # Tag ideas functions
@@ -46,10 +48,10 @@ def sampleface():
 			sf = json.load(sf_json_file)
 		sf_words_count_lists = sf['Count']
 		try:
-			x = [n/(n+1) for n in sf_words_count_lists]
+			x = [1/n for n in sf_words_count_lists]
 		except ZeroDivisionError:
 			continue
-		sample = random.choices(blog_words('sampleface.co.uk'), x, k=2)
+		sample = random.choices(blog_words('sampleface.co.uk'), x, k=num_of_tags)
 		
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
@@ -65,10 +67,11 @@ def cultrface():
 			cf = json.load(cf_json_file)
 		cf_words_count_lists = cf['Count']
 		try:
-			x = [n/(n+1) for n in cf_words_count_lists]
+			x = [1/n for n in cf_words_count_lists]
+			st.write(x)
 		except ZeroDivisionError:
 			continue
-		sample = random.choices(blog_words('cultrface.co.uk'), x, k=2)
+		sample = random.choices(blog_words('cultrface.co.uk'), x, k=num_of_tags)
 		
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
@@ -92,10 +95,10 @@ def logicface():
 		lf_words_count_lists = lf['Count']
 
 		try:
-			x = [n/(n+1) for n in lf_words_count_lists]
+			x = [1/n for n in lf_words_count_lists]
 		except ZeroDivisionError:
 			continue
-		sample = random.choices(blog_words('logicface.co.uk'), x, k=2)
+		sample = random.choices(blog_words('logicface.co.uk'), x, k=num_of_tags)
 		
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
@@ -118,10 +121,11 @@ def playrface():
 			pf = json.load(pf_json_file)
 		pf_words_count_lists = pf['Count']
 		try:
-			x = [n/(n+1) for n in pf_words_count_lists]
+			x = [1/n for n in pf_words_count_lists]
+			st.write(x)
 		except ZeroDivisionError:
 			continue
-		sample = random.choices(blog_words('playrface.co.uk'), x, k=2)
+		sample = random.choices(blog_words('playrface.co.uk'), x, k=num_of_tags)
 		
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
@@ -144,10 +148,10 @@ def distantarcade():
 			da = json.load(da_json_file)
 		da_words_count_lists = da['Count']
 		try:
-			x = [n/(n+1) for n in da_words_count_lists]
+			x = [1/n for n in da_words_count_lists]
 		except ZeroDivisionError:
 			continue
-		sample = random.choices(blog_words('distantarcade.co.uk'), x, k=2)
+		sample = random.choices(blog_words('distantarcade.co.uk'), x, k=num_of_tags)
 		
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
