@@ -121,7 +121,6 @@ def playrface():
 		pf_words_count_lists = pf['Count']
 		try:
 			random_weights_list = [1/n for n in pf_words_count_lists]
-			st.write(x)
 		except ZeroDivisionError:
 			continue
 		sample = random.choices(blog_words('playrface.co.uk'), random_weights_list, k=num_of_tags)
