@@ -56,7 +56,7 @@ def sampleface():
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 	
 def cultrface():
 
@@ -87,7 +87,7 @@ def logicface():
 
 		lf_weights = [1, 1, 1.5, 1, 1, 1.5, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1]
 
-		lf_cats_sample = random.choices(lf_cats, lf_weights, k=1)
+		lf_cats_sample = random.choices(lf_cats, lf_weights, k=num_of_tags)
 
 		with open("logicface.co.uk.json") as lf_json_file:
 			lf = json.load(lf_json_file)
@@ -114,7 +114,7 @@ def playrface():
 
 		pf_weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1]
 
-		pf_cats_sample = random.choices(pf_cats, pf_weights, k=1)
+		pf_cats_sample = random.choices(pf_cats, pf_weights, k=num_of_tags)
 
 		with open("playrface.co.uk.json") as pf_json_file:
 			pf = json.load(pf_json_file)
@@ -140,7 +140,7 @@ def distantarcade():
 
 		da_weights = [1.5, 1, 1, 1, 1, 1, 1]
 
-		da_cats_sample = random.choices(da_cats, da_weights, k=1)
+		da_cats_sample = random.choices(da_cats, da_weights, k=num_of_tags)
 
 		with open("distantarcade.co.uk.json") as da_json_file:
 			da = json.load(da_json_file)
