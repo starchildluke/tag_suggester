@@ -98,8 +98,12 @@ def logicface():
 		except ZeroDivisionError:
 			continue
 		sample = random.choices(blog_words('logicface.co.uk'), random_weights_list, k=num_of_tags)
+
+		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
+
+		cleaned_lf_cats_sample = '+'.join(lf_cats_sample).lower().replace(' ', '+')
 		
-		st.write(f"https://google.com/search?q={keyword}+{'+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")}+{'+'.join(lf_cats_sample).lower().replace(' ', '+')}")
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_lf_cats_sample}")
 
 def playrface():
 
