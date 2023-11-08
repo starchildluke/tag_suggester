@@ -44,19 +44,28 @@ def sampleface():
 	st.header('Sampleface ideas')
 
 	for sample in range(5):
+
+		sf_cats = ["music", "hip hop", "jazz", "funk", "soul music", "electronica", "dance music", "house music", "pop", "rock", "classical", "sampling", "mf doom", "mixes", "r&amp;b"]
+
+		sf_weights = [1 for i in sf_cats]
+
+		sf_cats_sample = random.choices(sf_cats, sf_weights, k=1)
+
 		with open("sampleface.co.uk.json") as sf_json_file:
 			sf = json.load(sf_json_file)
 		sf_words_count_lists = sf['Count']
+
 		try:
 			random_weights_list = [1/n for n in sf_words_count_lists]
 		except ZeroDivisionError:
 			continue
 		sample = random.choices(blog_words('sampleface.co.uk'), random_weights_list, k=num_of_tags)
+
+		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
+
+		cleaned_sf_cats_sample = '+'.join(sf_cats_sample).lower().replace(' ', '+')
 		
-		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_sf_cats_sample}")
 	
 def cultrface():
 
