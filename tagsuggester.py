@@ -83,9 +83,9 @@ def logicface():
 
 	for sample in range(5):
 
-		lf_cats = ["blerds", "engineering", "mathematics", "mobile", "projects", "science", "biology", "chemistry", "earth sciences", "physics", "tech", "black tech", "computing", "internet", "web", "video games", "computer science", "ai"]
+		lf_cats = ["engineering", "mathematics", "science", "biology", "chemistry", "earth sciences", "physics", "tech", "black tech", "computing", "internet", "computer science"]
 
-		lf_weights = [1, 1, 1.5, 1, 1, 1.5, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1]
+		lf_weights = [1 for i in lf_cats]
 
 		lf_cats_sample = random.choices(lf_cats, lf_weights, k=num_of_tags)
 
@@ -99,10 +99,7 @@ def logicface():
 			continue
 		sample = random.choices(blog_words('logicface.co.uk'), random_weights_list, k=num_of_tags)
 		
-		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-		else:
-			st.write('https://google.com/search?q=' + '+'.join(lf_cats_sample).lower().replace(' ', '+') + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
+		st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 
 def playrface():
 
