@@ -99,7 +99,7 @@ def logicface():
 			continue
 		sample = random.choices(blog_words('logicface.co.uk'), random_weights_list, k=num_of_tags)
 		
-		st.write(f'https://google.com/search?q={keyword}+{'+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")}+{'+'.join(lf_cats_sample).lower().replace(' ', '+')})
+		st.write(f"https://google.com/search?q={keyword}+{'+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")}+{'+'.join(lf_cats_sample).lower().replace(' ', '+')}")
 
 def playrface():
 
