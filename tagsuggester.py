@@ -87,7 +87,7 @@ def logicface():
 
 		lf_weights = [1 for i in lf_cats]
 
-		lf_cats_sample = random.choices(lf_cats, lf_weights, k=num_of_tags)
+		lf_cats_sample = random.choices(lf_cats, lf_weights, k=1)
 
 		with open("logicface.co.uk.json") as lf_json_file:
 			lf = json.load(lf_json_file)
