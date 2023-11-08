@@ -122,9 +122,9 @@ def playrface():
 
 		pf_cats = ["american football", "athletics", "baseball", "basketball", "cycling", "golf", "motor sports", "olympics", "summer olympics", "snooker", "soccer", "sport", "tennis", "water sports", "winter sports", "ice hockey", "skiing", "wrestling", "winter olympics"]
 
-		pf_weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1]
+		pf_weights = [1 for i in pf_cats]
 
-		pf_cats_sample = random.choices(pf_cats, pf_weights, k=num_of_tags)
+		pf_cats_sample = random.choices(pf_cats, pf_weights, k=1)
 
 		with open("playrface.co.uk.json") as pf_json_file:
 			pf = json.load(pf_json_file)
@@ -135,10 +135,11 @@ def playrface():
 			continue
 		sample = random.choices(blog_words('playrface.co.uk'), random_weights_list, k=num_of_tags)
 		
-		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-		else:
-			st.write('https://google.com/search?q=' + '+'.join(pf_cats_sample).lower().replace(' ', '+') + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
+		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
+
+		cleaned_pf_cats_sample = '+'.join(pf_cats_sample).lower().replace(' ', '+')
+		
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_pf_cats_sample}")
 
 def distantarcade():
 
@@ -146,11 +147,11 @@ def distantarcade():
 
 	for sample in range(5):
 
-		da_cats = ["gaming", "nintendo", "pc", "playstation", "pokemon", "sega", "xbox"]
+		da_cats = ["gaming", "nintendo", "pc", "playstation", "sega", "xbox"]
 
-		da_weights = [1.5, 1, 1, 1, 1, 1, 1]
+		da_weights = [1 for i in da_cats]
 
-		da_cats_sample = random.choices(da_cats, da_weights, k=num_of_tags)
+		da_cats_sample = random.choices(da_cats, da_weights, k=1)
 
 		with open("distantarcade.co.uk.json") as da_json_file:
 			da = json.load(da_json_file)
@@ -161,10 +162,11 @@ def distantarcade():
 			continue
 		sample = random.choices(blog_words('distantarcade.co.uk'), random_weights_list, k=num_of_tags)
 		
-		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-		else:
-			st.write('https://google.com/search?q=' + '+'.join(da_cats_sample).lower().replace(' ', '+') + '+' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
+		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
+
+		cleaned_da_cats_sample = '+'.join(pf_cats_sample).lower().replace(' ', '+')
+		
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample}")
 
 def all_blogs():
 
