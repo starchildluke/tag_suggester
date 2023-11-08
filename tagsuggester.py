@@ -164,7 +164,7 @@ def distantarcade():
 		
 		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
 
-		cleaned_da_cats_sample = '+'.join(pf_cats_sample).lower().replace(' ', '+')
+		cleaned_da_cats_sample = '+'.join(da_cats_sample).lower().replace(' ', '+')
 		
 		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample}")
 
