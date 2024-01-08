@@ -63,7 +63,7 @@ def sampleface():
 
 		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
 
-		cleaned_sf_cats_sample = '+'.join(sf_cats_sample).lower().replace(' ', '+')
+		cleaned_sf_cats_sample = '+'.join(sf_cats_sample).lower().replace(' ', '+').replace('&amp;','%26')
 		
 		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_sf_cats_sample}")
 	
