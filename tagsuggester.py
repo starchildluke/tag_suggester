@@ -58,6 +58,7 @@ def sampleface():
 		try:
 			random_weights_list = [1/n for n in sf_words_count_lists]
 		except ZeroDivisionError:
+			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('sampleface.co.uk'), random_weights_list, k=num_of_tags)
 
@@ -78,13 +79,14 @@ def cultrface():
 		try:
 			random_weights_list = [1/n for n in cf_words_count_lists]
 		except ZeroDivisionError:
+			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('cultrface.co.uk'), random_weights_list, k=num_of_tags)
 		
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))	
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
 
 def logicface():
 
@@ -105,6 +107,7 @@ def logicface():
 		try:
 			random_weights_list = [1/n for n in lf_words_count_lists]
 		except ZeroDivisionError:
+			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('logicface.co.uk'), random_weights_list, k=num_of_tags)
 
@@ -132,6 +135,7 @@ def playrface():
 		try:
 			random_weights_list = [1/n for n in pf_words_count_lists]
 		except ZeroDivisionError:
+			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('playrface.co.uk'), random_weights_list, k=num_of_tags)
 		
@@ -159,6 +163,7 @@ def distantarcade():
 		try:
 			random_weights_list = [1/n for n in da_words_count_lists]
 		except ZeroDivisionError:
+			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('distantarcade.co.uk'), random_weights_list, k=num_of_tags)
 		
