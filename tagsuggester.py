@@ -85,10 +85,10 @@ def cultrface():
 		
 		if keyword:
 			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + "site:kottke.org")
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + '' + "site:kottke.org")
 		else:
 			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + "site:kottke.org")
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + '' + "site:kottke.org")
 
 
 def logicface():
@@ -177,7 +177,7 @@ def distantarcade():
 		cleaned_da_cats_sample = '+'.join(da_cats_sample).lower().replace(' ', '+')
 		
 		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample}")
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample}+site:kottke.org")
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample}+ site:kottke.org")
 
 def all_blogs():
 
