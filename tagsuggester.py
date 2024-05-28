@@ -55,11 +55,10 @@ def sampleface():
 		sf = json.load(sf_json_file)
 	sf_words_count_lists = sf['Count']
 
-	try:
-		random_weights_list = [1/n for n in sf_words_count_lists]
-	except ZeroDivisionError:
-		st.warning("One of the tags has an empty count. Please check the backend and remove it.")
-		continue
+	
+	random_weights_list = [1/n for n in sf_words_count_lists]
+
+
 	sample = random.choices(blog_words('sampleface.co.uk'), random_weights_list, k=num_of_tags)
 
 	cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
@@ -75,11 +74,9 @@ def cultrface():
 	with open("cultrface.co.uk.json") as cf_json_file:
 		cf = json.load(cf_json_file)
 	cf_words_count_lists = cf['Count']
-	try:
-		random_weights_list = [1/n for n in cf_words_count_lists]
-	except ZeroDivisionError:
-		st.warning("One of the tags has an empty count. Please check the backend and remove it.")
-		continue
+	
+	random_weights_list = [1/n for n in cf_words_count_lists]
+
 	sample = random.choices(blog_words('cultrface.co.uk'), random_weights_list, k=num_of_tags)
 	
 	if keyword:
@@ -101,11 +98,9 @@ def logicface():
 		lf = json.load(lf_json_file)
 	lf_words_count_lists = lf['Count']
 
-	try:
-		random_weights_list = [1/n for n in lf_words_count_lists]
-	except ZeroDivisionError:
-		st.warning("One of the tags has an empty count. Please check the backend and remove it.")
-		continue
+	
+	random_weights_list = [1/n for n in lf_words_count_lists]
+
 	sample = random.choices(blog_words('logicface.co.uk'), random_weights_list, k=num_of_tags)
 
 	cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
@@ -127,11 +122,9 @@ def playrface():
 	with open("playrface.co.uk.json") as pf_json_file:
 		pf = json.load(pf_json_file)
 	pf_words_count_lists = pf['Count']
-	try:
-		random_weights_list = [1/n for n in pf_words_count_lists]
-	except ZeroDivisionError:
-		st.warning("One of the tags has an empty count. Please check the backend and remove it.")
-		continue
+	
+	random_weights_list = [1/n for n in pf_words_count_lists]
+
 	sample = random.choices(blog_words('playrface.co.uk'), random_weights_list, k=num_of_tags)
 	
 	cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
@@ -153,11 +146,9 @@ def distantarcade():
 	with open("distantarcade.co.uk.json") as da_json_file:
 		da = json.load(da_json_file)
 	da_words_count_lists = da['Count']
-	try:
-		random_weights_list = [1/n for n in da_words_count_lists]
-	except ZeroDivisionError:
-		st.warning("One of the tags has an empty count. Please check the backend and remove it.")
-		continue
+	
+	random_weights_list = [1/n for n in da_words_count_lists]
+
 	sample = random.choices(blog_words('distantarcade.co.uk'), random_weights_list, k=num_of_tags)
 	
 	cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
