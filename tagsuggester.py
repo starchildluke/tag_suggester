@@ -159,13 +159,14 @@ def distantarcade():
 
 def all_blogs():
 
-	sampleface()
-	cultrface()
-	logicface()
-	playrface()
-	distantarcade()
+	for sample in range(5):
+
+		sampleface()
+		cultrface()
+		logicface()
+		playrface()
+		distantarcade()
 		
 # Execute functions
 if load_tag_ideas:
-	for sample in range(5):
-		all_blogs()
+	all_blogs()
