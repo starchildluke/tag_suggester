@@ -39,6 +39,9 @@ def blog_words(blog):
 	blog_words_lists = json_obj['Tag']
 	return blog_words_lists
 
+post_formats = ["regular", "image", "cool link", "quote"]
+post_formats_weights = [0.6, 0.1, 0.2, 0.1]
+
 def sampleface():
 
 	st.header('Sampleface ideas')
@@ -50,6 +53,7 @@ def sampleface():
 		sf_weights = [1 for i in sf_cats]
 
 		sf_cats_sample = random.choices(sf_cats, sf_weights, k=1)
+		post_format_rand = random.choices(post_formats, post_formats_weights, k=1)
 
 		with open("sampleface.co.uk.json") as sf_json_file:
 			sf = json.load(sf_json_file)
@@ -65,8 +69,10 @@ def sampleface():
 		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
 
 		cleaned_sf_cats_sample = '+'.join(sf_cats_sample).lower().replace(' ', '+').replace('&amp;','%26')
-		
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_sf_cats_sample}")
+		if keyword:
+			st.markdown(f"[How about a/an {post_format_rand[0]} post about {keyword}, {cleaned_sample.replace('+', ' ')}, and {cleaned_sf_cats_sample.replace('+', ' ')}?](https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_sf_cats_sample})")
+		else:
+			st.markdown(f"[How about a/an {post_format_rand[0]} post about {cleaned_sample.replace('+', ' ')} and {cleaned_sf_cats_sample.replace('+', ' ')}?](https://google.com/search?q={cleaned_sample}+{cleaned_sf_cats_sample})")
 	
 def cultrface():
 
@@ -82,13 +88,12 @@ def cultrface():
 			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('cultrface.co.uk'), random_weights_list, k=num_of_tags)
+		post_format_rand = random.choices(post_formats, post_formats_weights, k=1)
 		
 		if keyword:
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + '+' + "site:kottke.org")
+			st.write('https://google.com/search?q=' + f'{keyword}+' + '+'.join(sample).lower().replace('come in god','religion').replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + f" - {post_format_rand[0]}")
 		else:
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'"))
-			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + '+' + "site:kottke.org")
+			st.write('https://google.com/search?q=' + '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'") + f" - {post_format_rand[0]}")
 
 
 def logicface():
@@ -113,13 +118,13 @@ def logicface():
 			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('logicface.co.uk'), random_weights_list, k=num_of_tags)
+		post_format_rand = random.choices(post_formats, post_formats_weights, k=1)
 
 		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
 
 		cleaned_lf_cats_sample = '+'.join(lf_cats_sample).lower().replace(' ', '+')
 		
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_lf_cats_sample}")
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_lf_cats_sample}+site:kottke.org")
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_lf_cats_sample} - {post_format_rand[0]}")
 
 def playrface():
 
@@ -142,13 +147,13 @@ def playrface():
 			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('playrface.co.uk'), random_weights_list, k=num_of_tags)
+		post_format_rand = random.choices(post_formats, post_formats_weights, k=1)
 		
 		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
 
 		cleaned_pf_cats_sample = '+'.join(pf_cats_sample).lower().replace(' ', '+')
 		
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_pf_cats_sample}")
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_pf_cats_sample}+site:kottke.org")
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_pf_cats_sample} - {post_format_rand[0]}")
 
 def distantarcade():
 
@@ -171,13 +176,13 @@ def distantarcade():
 			st.warning("One of the tags has an empty count. Please check the backend and remove it.")
 			continue
 		sample = random.choices(blog_words('distantarcade.co.uk'), random_weights_list, k=num_of_tags)
+		post_format_rand = random.choices(post_formats, post_formats_weights, k=1)
 		
 		cleaned_sample = '+'.join(sample).lower().replace(' ', '+').replace('&', '').replace('\u00e9', 'e').replace('#039;', "'")
 
 		cleaned_da_cats_sample = '+'.join(da_cats_sample).lower().replace(' ', '+')
 		
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample}")
-		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample}+ site:kottke.org")
+		st.write(f"https://google.com/search?q={keyword}+{cleaned_sample}+{cleaned_da_cats_sample} - {post_format_rand[0]}")
 
 def all_blogs():
 
