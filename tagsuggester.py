@@ -41,4 +41,7 @@ if load_tag_ideas:
         st.header(f"Ideas for {file_path.replace('.json', '')}")
         combinations = randomise_tags(file_path)
         for combination in combinations:
-            st.write("https://google.com/search?q=" + '+'.join(combination).lower().replace(' ', '+'))
+            if keyword:
+                st.write(f"https://google.com/search?q={keyword}+{'+'.join(combination).lower().replace(' ', '+')}")
+            else:
+                st.write(f"https://google.com/search?q={'+'.join(combination).lower().replace(' ', '+')}")
