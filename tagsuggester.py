@@ -42,6 +42,6 @@ if load_tag_ideas:
         combinations = randomise_tags(file_path)
         for combination in combinations:
             if keyword:
-                st.write(f"https://google.com/search?q={keyword.replace(" ","+")}+{'+'.join(combination).lower().replace(' ', '+')}")
+                st.write(f"https://google.com/search?q={keyword.replace(' ','+')}+{'+'.join(combination).lower().replace(' ', '+')}")
             else:
                 st.write(f"https://google.com/search?q={'+'.join(combination).lower().replace(' ', '+')}")
