@@ -1,2 +1,6 @@
 # tag_suggester
-This script extracts the tags from my blogs and generates randomised Google search URLs for content ideation.
+<img src="reshot-icon-improvement-suggestion-FLGK3T7EHU.svg" width="100" align="right">
+
+> Taxonomies don't have to be taxing.
+
+This app randomly selects tags from my blogs and generates Google search URLs which I use for content ideation.
